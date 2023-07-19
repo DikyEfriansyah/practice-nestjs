@@ -1,10 +1,4 @@
-import {
-  Column,
-  Entity,
-  Index,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from "typeorm";
+import { Column, Entity, Index, OneToMany } from "typeorm";
 import { Employees } from "./Employees";
 import { JobHistory } from "./JobHistory";
 
@@ -13,11 +7,7 @@ import { JobHistory } from "./JobHistory";
 @Index("jobs_job_title_key", ["jobTitle"], { unique: true })
 @Entity("jobs", { schema: "public" })
 export class Jobs {
-  @Column("character varying" ,{ 
-    primary: true,
-    name: "job_id",
-    length: 10,
-  })
+  @Column("character varying", { primary: true, name: "job_id", length: 10 })
   jobId: string;
 
   @Column("character varying", {

@@ -5,6 +5,8 @@ import { GlobalModule } from './global/global.module';
 import { RegionsController } from './regions/regions.controller';
 import { RegionsService } from './regions/regions.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UserService } from './user/user.service';
+import { UserController } from './user/user.controller';
 
 @Module({
   imports: [

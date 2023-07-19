@@ -7,8 +7,8 @@ import {
 } from "typeorm";
 import { Countries } from "./Countries";
 
-@Index("regions_pkey", ["regionId"], { unique: true })
 @Index("region_pk", ["regionId"], { unique: true })
+@Index("regions_pkey", ["regionId"], { unique: true })
 @Entity("regions", { schema: "public" })
 export class Regions {
   @PrimaryGeneratedColumn({ type: "integer", name: "region_id" })
@@ -20,6 +20,9 @@ export class Regions {
     length: 25,
   })
   regionName: string | null;
+
+  @Column("character varying", { name: "photo", nullable: true })
+  photo: string | null;
 
   @OneToMany(() => Countries, (countries) => countries.region)
   countries: Countries[];

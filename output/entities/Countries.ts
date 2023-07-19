@@ -5,7 +5,6 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
-  PrimaryGeneratedColumn,
 } from "typeorm";
 import { Regions } from "./Regions";
 import { Locations } from "./Locations";
@@ -14,7 +13,7 @@ import { Locations } from "./Locations";
 @Index("countries_pkey", ["countryId"], { unique: true })
 @Entity("countries", { schema: "public" })
 export class Countries {
-  @Column("char", { primary: true, name: "country_id", length: 2})
+  @Column("character", { primary: true, name: "country_id", length: 2 })
   countryId: string;
 
   @Column("character varying", {
